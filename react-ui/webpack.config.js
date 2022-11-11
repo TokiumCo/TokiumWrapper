@@ -10,8 +10,10 @@ module.exports = () => {
           exclude: /node_modules/,
           use: ["style-loader", "css-loader", "source-map-loader"],
         },
-        
       ],
     },
+    resolve: {
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    },    
   }
 }
