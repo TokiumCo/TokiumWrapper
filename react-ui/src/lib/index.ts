@@ -1,10 +1,10 @@
 import tokiumAPI from './api';
 
 class Tokium {
-    verified: boolean;
+    verified: boolean | undefined;
     collectionURL: string;
     address: string;
-    constructor(verified: boolean, collectionURL: string, address: string){
+    constructor(verified: boolean | undefined, collectionURL: string, address: string){
         this.verified = verified;
         this.collectionURL = collectionURL;
         this.address = address
@@ -59,7 +59,7 @@ class Tokium {
     }
 
     async hasPaidRoyalties() {
-        const test = await tokiumAPI({
+        const verified = await tokiumAPI({
             method: 'POST',
             url: '/hasPaidRoyalties',
             data:{
@@ -71,12 +71,12 @@ class Tokium {
         }).catch((err) => {
             console.log(err)
         });
-        return test
+        return verified
     }
 
     async verifyTokenWithRoyalty() {
         const { royaltiesPaid, tokensOwned} = await this.hasPaidRoyalties();
-        
+        console.log(royaltiesPaid, tokensOwned)
         if (royaltiesPaid === true && tokensOwned > 0) {
             this.verified = true;
         } else {

@@ -1,28 +1,33 @@
 import { Lockscreen } from './components';
 import './index.css';
+import gatedByTokium from './assets/gatedByTokium.png';
+import { Link } from 'react-router-dom';
 
 function App() {
-  const pubkey = 'ppozQkdxfndUxBf5jmgwpc1vSKt3H8bRVqDx7QtBWd5';
   return (
-    <div className="App">
-      <div className='locked-form'>
-        <Lockscreen pubkey={pubkey}>
-          <div>
-            <form>
-              <input type='email' placeholder='email'></input>
-              <input type='password' placeholder='password'></input>
-            </form>
+      <div className="App">
+        <img src={gatedByTokium} alt='Gated by Tokium' className='tokiumLogo'/>
+        <div className='container'>
+          <div className='locked-form'>
+            <Lockscreen>
+              <div>
+                <form>
+                  <input type='email' placeholder='email'></input>
+                  <input type='password' placeholder='password'></input>
+                </form>
+              </div>
+            </Lockscreen>
           </div>
-        </Lockscreen>
+          <div className='locked-sm'>
+            <Lockscreen>
+              <div>
+                <p>Some Secret Text</p>
+              </div>
+            </Lockscreen>
+        </div>
+        <Link to='/GatedSite'>Go to Gated Site</Link>
+        </div>
       </div>
-      <div className='locked-sm'>
-        <Lockscreen>
-          <div>
-            <p>Some Secret Text</p>
-          </div>
-        </Lockscreen>
-      </div>
-    </div>
   );
 }
 

@@ -1,32 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { UnlockModal } from './UnlockModal';
 import './lockscreen.css'
-import { Tokium } from '../lib/index'
+import { TokiumContext } from './TokiumContext'
 
 interface lockProps {
-    pubkey: string,
     children?: React.ReactNode | React.ReactNode[];
 };
 
+// UI Component used to block children elements from rendering. Takes width and height of parent element.
 export const Lockscreen = (props: lockProps) => { 
-    const [verified, setVerified] = useState(false);
-    const tokium = new Tokium(verified, 'https://magiceden.io/marketplace/paragons', props.pubkey);
-  
-    useEffect(() => {
-        async function verifyUser() {
-          await tokium.verifyTokenWithRoyalty()
-          setVerified(tokium.verified)
-        }
-        verifyUser();
-    });
-
-    if (verified === false) {
+    const tokium = useContext(TokiumContext);
+    if (tokium.verified === false) {
         return (
             <div className="lockscreen">
-                <UnlockModal isLocked={verified} isRoyaltyReq={true}></UnlockModal>
+                <UnlockModal isLocked={tokium.verified} isRoyaltyReq={true}></UnlockModal>
             </div>
         )
-    } else if (verified === true) {
+    } else if (tokium.verified === true) {
         return (
             <>
                 {props.children}

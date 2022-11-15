@@ -5,24 +5,38 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e2e0ff;
+  padding: 5em;
+}
+
+p {
+  color: black;
+}
+
+.tokiumLogo {
+  width: auto;
+  height: 4em;
 }
 
 .App {
   width: 100vw;
-  min-height: 100vh;
-  padding: 4em;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-shrink: 0;
-  row-gap: 5em;
-  column-gap: 5em;
-  background-color: #2A3232;
+  min-height: auto;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  align-items: start;
+  margin-top: 5em;
+  row-gap: 5em;
+  column-gap: 5em;
 }
 
 .locked-form {
