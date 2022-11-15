@@ -1,0 +1,17 @@
+.unlockModal {
+    font-size: 100%;
+    font-family: 'Noto', sans-serif;
+    padding: 1em;
+}
+
+.tokiumLogo {
+    min-width: 20%;
+    max-width: 40%;
+    height: auto;
+}
+
+@media only screen and (max-width: 760px) {
+    .tokiumLogo {
+        display: none;
+    }
+}

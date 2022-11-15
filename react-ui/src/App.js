@@ -2,10 +2,11 @@ import { Lockscreen } from './components';
 import './index.css';
 
 function App() {
+  const pubkey = 'ppozQkdxfndUxBf5jmgwpc1vSKt3H8bRVqDx7QtBWd5';
   return (
     <div className="App">
       <div className='locked-form'>
-        <Lockscreen isLocked={true}>
+        <Lockscreen pubkey={pubkey}>
           <div>
             <form>
               <input type='email' placeholder='email'></input>
@@ -14,13 +15,8 @@ function App() {
           </div>
         </Lockscreen>
       </div>
-      <div className='locked-img'>
-        <Lockscreen isLocked={true}>
-          <img src='../public/logo512.png' width={500} height={500} alt='test'/>
-          </Lockscreen>  
-      </div>
       <div className='locked-sm'>
-        <Lockscreen isLocked={true}>
+        <Lockscreen>
           <div>
             <p>Some Secret Text</p>
           </div>

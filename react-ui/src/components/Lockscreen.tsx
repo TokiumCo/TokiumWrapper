@@ -1,33 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { UnlockModal } from './UnlockModal';
+import './lockscreen.css'
+import { Tokium } from '../lib/index'
 
 interface lockProps {
-    isLocked: boolean,
+    pubkey: string,
     children?: React.ReactNode | React.ReactNode[];
 };
 
-const lockscreenStyle: React.CSSProperties = {
-    background: 'linear-gradient(305deg, rgba(42,50,82,1) 0%, rgba(85,96,114,1) 21%, rgba(84,182,156,1) 90%, rgba(0,226,158,1) 100%)',
-    position: 'relative',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%',
-    width: '100%',
-    boxShadow: 'inset 0px 0px 40px #2A3232',
-    padding: '1em',
-};
-
- 
 export const Lockscreen = (props: lockProps) => { 
+    const [verified, setVerified] = useState(false);
+    const tokium = new Tokium(verified, 'https://magiceden.io/marketplace/paragons', props.pubkey);
+  
+    useEffect(() => {
+        async function verifyUser() {
+          await tokium.verifyTokenWithRoyalty()
+          setVerified(tokium.verified)
+        }
+        verifyUser();
+    });
 
-    if (props.isLocked) {
+    if (verified === false) {
         return (
-            <div style={lockscreenStyle}>
-                <UnlockModal isLocked={props.isLocked} isRoyaltyReq={true}></UnlockModal>
+            <div className="lockscreen">
+                <UnlockModal isLocked={verified} isRoyaltyReq={true}></UnlockModal>
             </div>
         )
-    } else {
+    } else if (verified === true) {
         return (
             <>
                 {props.children}
