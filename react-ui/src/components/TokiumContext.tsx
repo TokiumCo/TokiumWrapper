@@ -15,17 +15,16 @@ type tokiumStateType = {
     verified: boolean | undefined
 }
 
-
 const TokiumContext = React.createContext({} as tokiumStateType)
 
 const TokiumProvider = (props: tokiumProviderProps) => {
     const [verified, setVerified] = useState<boolean | undefined>(undefined);
-    const tokium = new Tokium(verified, props.collection, props.pubkey);
-  
+    const tokium = new Tokium(props.collection, props.pubkey);
+
     useEffect(() => {
         async function verifyUser() {
-            await tokium.verifyTokenWithRoyalty()
-            setVerified(await Promise.resolve(tokium.verified))
+            const verified = await tokium.verifyTokenWithRoyalty()
+            setVerified(await Promise.resolve(verified))
         }
         verifyUser();
     });

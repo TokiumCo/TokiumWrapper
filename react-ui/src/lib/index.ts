@@ -4,8 +4,7 @@ class Tokium {
     verified: boolean | undefined;
     collectionURL: string;
     address: string;
-    constructor(verified: boolean | undefined, collectionURL: string, address: string){
-        this.verified = verified;
+    constructor(collectionURL: string, address: string){
         this.collectionURL = collectionURL;
         this.address = address
     }
@@ -76,7 +75,6 @@ class Tokium {
 
     async verifyTokenWithRoyalty() {
         const { royaltiesPaid, tokensOwned} = await this.hasPaidRoyalties();
-        console.log(royaltiesPaid, tokensOwned)
         if (royaltiesPaid === true && tokensOwned > 0) {
             this.verified = true;
         } else {
