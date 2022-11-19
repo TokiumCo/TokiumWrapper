@@ -1,5 +1,5 @@
 {
-  "name": "lockmodule_test",
+  "name": "@tokium.co/tokiumwrapper",
   "version": "0.1.4",
   "description": "Production-enabed package to limit access to those who've payed royalties for their NFT",
   "private": false,

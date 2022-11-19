@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { UnlockModal } from '../unlockModal/UnlockModal';
-import { TokiumContext } from '../../context/TokiumContext'
-import './lockscreen.css'
+import { TokiumContext } from '../../context/TokiumContext';
 
 interface lockProps {
     children?: React.ReactNode | React.ReactNode[];
@@ -12,7 +11,7 @@ export const Lockscreen = (props: lockProps) => {
     const tokium = useContext(TokiumContext);
     if (tokium.verified === false) {
         return (
-            <div className="lockscreen">
+            <div className="tokium_lockscreen">
                 <UnlockModal isLocked={tokium.verified} isRoyaltyReq={true}></UnlockModal>
             </div>
         )
@@ -24,8 +23,8 @@ export const Lockscreen = (props: lockProps) => {
         )
     } else if (tokium.verified === undefined) {
         return (
-            <div className="lockscreen">
-                <div className='loading_spinner'></div>
+            <div className="tokium_lockscreen">
+                <div className='tokium_loading_spinner'></div>
             </div>
         )
     }

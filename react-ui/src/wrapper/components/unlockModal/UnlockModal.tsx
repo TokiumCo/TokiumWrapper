@@ -1,5 +1,4 @@
 import React from 'react';
-import './unlockmodal.css';
 import gatedByTokium from '../../assets/gatedByTokium.png';
 
 interface unlockModalProps {
@@ -10,13 +9,13 @@ interface unlockModalProps {
  
 export const UnlockModal = (props: unlockModalProps) => { 
     return (
-        <div className="unlockModal">
-            <img src={gatedByTokium} alt='Gated by Tokium' width={2433} height={334} className='tokium'/>
+        <div className="tokium_unlockModal">
+            <img src={gatedByTokium} alt='Gated by Tokium' width={2433} height={334} className='tokium_image'/>
             {
                 props.isRoyaltyReq ? (
-                    <p>This content is token and royalty gated.</p>
+                    <p className="tokium_font">This content is token and royalty gated.</p>
                 ):(
-                    <p>This content is token gated.</p>
+                    <p className="tokium_font">This content is token gated.</p>
                 )
             }
         </div>

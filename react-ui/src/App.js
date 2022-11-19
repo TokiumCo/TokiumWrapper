@@ -2,6 +2,7 @@ import { Lockscreen } from './wrapper';
 import './index.css';
 import gatedByTokium from './wrapper/assets/gatedByTokium.png';
 import { Link } from 'react-router-dom';
+import './wrapper/styles.css';
 
 function App() {
   return (
