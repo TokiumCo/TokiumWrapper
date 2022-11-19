@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { UnlockModal } from './UnlockModal';
+import { UnlockModal } from '../unlockModal/UnlockModal';
 import './lockscreen.css'
-import { TokiumContext } from './TokiumContext'
+import { TokiumContext } from '../../context/TokiumContext'
 
 interface lockProps {
     children?: React.ReactNode | React.ReactNode[];

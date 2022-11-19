@@ -1,6 +1,6 @@
-import { Lockscreen } from './components';
+import { Lockscreen } from './wrapper';
 import './index.css';
-import gatedByTokium from './assets/gatedByTokium.png';
+import gatedByTokium from './wrapper/assets/gatedByTokium.png';
 import { Link } from 'react-router-dom';
 
 function App() {

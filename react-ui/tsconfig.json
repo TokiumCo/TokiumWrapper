@@ -9,7 +9,11 @@
     "strict": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@wrapper": ["src/wrapper/*"]
+    }
   },
-  "include": ["./src/components", "./src/assets", "./src/index.d.ts"],
+  "include": ["src/wrapper", "./src/assets", "./src/index.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

@@ -5,10 +5,10 @@ import {
     Route,
     Routes
 } from 'react-router-dom';
-import { GatedRoute } from './components';
+import { GatedRoute } from './wrapper';
 import App from './App'
 import GatedSite from './GatedSite'
-import { TokiumProvider } from './components/TokiumContext'
+import { TokiumProvider } from './wrapper/context'
 
 const pubkey = 'ASgysXy4k8xhq1QeQ59kBs8bK5e5jdHwhkuX4Qd7pWTZ';
 const collection = 'https://magiceden.io/marketplace/y00ts';

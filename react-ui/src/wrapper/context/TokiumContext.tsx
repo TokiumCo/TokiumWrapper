@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Tokium } from "../lib";
+import { Tokium } from "../../lib";
 
 // Props passed to the <TokiumProvider>
 interface tokiumProviderProps {

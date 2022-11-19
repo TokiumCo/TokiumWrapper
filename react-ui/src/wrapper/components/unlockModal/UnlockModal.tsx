@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './unlockmodal.css';
-import gatedByTokium from '../assets/gatedByTokium.png';
+import gatedByTokium from '../../assets/gatedByTokium.png';
 
 interface unlockModalProps {
     isLocked: boolean,

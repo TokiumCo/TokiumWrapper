@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { Outlet, Navigate } from 'react-router-dom';
-import { TokiumContext } from './TokiumContext'
+import { TokiumContext } from '../../context/TokiumContext';
 
 interface gatedRouteProps {
     redirect: string,
