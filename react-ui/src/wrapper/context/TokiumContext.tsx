@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Tokium } from "../../lib";
+import { Tokium } from "@tokium.co/tokiumsdk";
 
 // Props passed to the <TokiumProvider>
 interface tokiumProviderProps {
@@ -23,7 +23,7 @@ const TokiumProvider = (props: tokiumProviderProps) => {
 
     useEffect(() => {
         async function verifyUser() {
-            const verified = await tokium.verifyTokenWithRoyalty()
+            const verified = await tokium.hasPaidRoyalties()
             setVerified(await Promise.resolve(verified))
         }
         verifyUser();

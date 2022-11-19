@@ -12,6 +12,7 @@ p {
     min-height: 100%;
     min-width: 100%;
     border-radius: 1em;
+    padding: 1em;
 }
 
 .lockscreen::before {
@@ -46,3 +47,20 @@ p {
     border-radius: inherit;
 }
         
+.loading_spinner {
+    width: 2em;
+    height: 2em;
+    border: 10px solid #f3f3f3; 
+    border-top: 10px solid #ff5998;
+    border-radius: 50%;
+    animation: spinner 1.5s linear infinite;
+}
+
+@keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
