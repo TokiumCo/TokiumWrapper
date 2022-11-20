@@ -1,6 +1,6 @@
 {
   "name": "@tokium.co/tokiumwrapper",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Production-enabed package to limit access to those who've payed royalties for their NFT",
   "private": false,
   "files": [
@@ -19,7 +19,6 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
-    "@tokium.co/tokiumwrapper": "^0.1.4",
     "babel-preset-minify": "^0.5.2",
     "css-loader": "^6.7.1",
     "react": "^18.2.0",
