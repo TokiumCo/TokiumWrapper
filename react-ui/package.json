@@ -1,6 +1,6 @@
 {
   "name": "@tokium.co/tokiumwrapper",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Production-enabed package to limit access to those who've payed royalties for their NFT",
   "private": false,
   "files": [
@@ -19,6 +19,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "@tokium.co/tokiumwrapper": "^0.1.4",
     "babel-preset-minify": "^0.5.2",
     "css-loader": "^6.7.1",
     "react": "^18.2.0",
@@ -33,9 +34,10 @@
     "react": ">=16",
     "react-dom": ">=16"
   },
-  "module": "dist/Index.js",
-  "main": "dist/Index.js",
-  "types": "dist/Index.d.ts",
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "type": "commonjs",
+  "types": "dist/index.d.ts",
   "author": {
     "name": "amritpal chera"
   },
@@ -47,8 +49,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {

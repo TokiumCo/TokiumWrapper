@@ -1,4 +1,5 @@
-import { Lockscreen } from './wrapper';
+// import { Lockscreen } from './wrapper';
+import {Lockscreen} from "@tokium.co/tokiumwrapper"
 import './index.css';
 import gatedByTokium from './wrapper/assets/gatedByTokium.png';
 import { Link } from 'react-router-dom';

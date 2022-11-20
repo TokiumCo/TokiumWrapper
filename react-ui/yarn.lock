@@ -1832,6 +1832,15 @@
   dependencies:
     axios "^0.27.2"
 
+"@tokium.co/tokiumwrapper@^0.1.4":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@tokium.co/tokiumwrapper/-/tokiumwrapper-0.1.9.tgz#c56f518ff1682a8311922e780cb30618cc21d0c4"
+  integrity sha512-Twr1MfLJ+fOA4IZsgMkeL+KtSUUVXkJyHiZsDPCXV8BgieE9LsHickqN83lHm2OOi4RWH6vndwnjjcHACtVADQ==
+  dependencies:
+    "@tokium.co/tokiumsdk" "^1.0.15"
+    axios "^1.1.3"
+    react-router-dom "^6.4.3"
+
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
