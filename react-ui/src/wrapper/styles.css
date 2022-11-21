@@ -9,10 +9,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 100%;
-  min-width: 100%;
   border-radius: 1em;
-  padding: 1em;
+  padding: 4px;
 }
 
 .tokium_lockscreen::before {
@@ -24,7 +22,7 @@
   bottom: 0;
   left: 0;
   background: linear-gradient(25deg, #f06598 33%, #fff500 66%, #00e29e 100% );
-  filter: blur(1em);
+  filter: blur(4px);
   opacity: 1;
   transition: opacity 0.3s;
   border-radius: inherit;
@@ -76,10 +74,4 @@
   min-width: 30%;
   max-width: 50%;
   height: auto;
-}
-
-@media only screen and (max-width: 760px) {
-  .tokium_unlockModal {
-      display: none;
-  }
 }

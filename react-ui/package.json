@@ -1,6 +1,6 @@
 {
   "name": "@tokium.co/tokiumwrapper",
-  "version": "0.2.2",
+  "version": "0.2.5",
   "description": "Production-enabed package to limit access to those who've payed royalties for their NFT",
   "private": false,
   "files": [
@@ -35,7 +35,6 @@
   },
   "module": "dist/index.js",
   "main": "dist/index.js",
-  "type": "commonjs",
   "types": "dist/index.d.ts",
   "author": {
     "name": "amritpal chera"
