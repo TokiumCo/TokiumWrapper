@@ -7,20 +7,21 @@ import './wrapper/styles.css';
 
 function App() {
   return (
-      <div className="App">
-        <img src={gatedByTokium} alt='Gated by Tokium' className='tokiumLogo'/>
-        <div className='container'>
-          <div className='locked-form'>
-            <Lockscreen>
-              <div>
-                <form>
-                  <input type='email' placeholder='email'></input>
-                  <input type='password' placeholder='password'></input>
-                </form>
-              </div>
-            </Lockscreen>
-          </div>
-          <div className='locked-sm'>
+    <div className="App">
+      <img src={gatedByTokium} alt='Gated by Tokium' className='tokiumLogo'/>
+      <div className='container'>
+        <div className='locked-form'>
+          {/* Custom Lockscreen styles */}
+          <Lockscreen style={{width: '200px'}}>
+            <div>
+              <form>
+                <input type='email' placeholder='email'></input>
+                <input type='password' placeholder='password'></input>
+              </form>
+            </div>
+          </Lockscreen>
+        </div>
+        <div className='locked-sm'>
             <Lockscreen>
               <div>
                 <p>Some Secret Text</p>
@@ -28,8 +29,8 @@ function App() {
             </Lockscreen>
         </div>
         <Link to='/GatedSite'>Go to Gated Site</Link>
-        </div>
       </div>
+    </div>
   );
 }
 

@@ -45,6 +45,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "repository": {
+    "url": "https://github.com/TokiumSOL/TokiumWrapper.git"
+  },
   "eslintConfig": {
     "extends": [
       "react-app"
