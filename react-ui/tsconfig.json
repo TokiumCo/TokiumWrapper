@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "target": "es5",
-    "module": "commonjs",
+    "target": "ES5",
+    "module": "CommonJS",
+    "esModuleInterop": true,
     "declaration": true,
     "outDir": "./dist",
     "strict": true,
   },
-  "include": ["./src/components"],
+  "include": ["src/wrapper/**/*"],
   "exclude": ["node_modules", "dist"]
 }

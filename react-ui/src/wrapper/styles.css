@@ -1,0 +1,77 @@
+.tokium_font {
+  font-family: 'Noto', sans-serif;
+}
+
+.tokium_lockscreen {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 1em;
+  padding: 4px;
+}
+
+.tokium_lockscreen::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(25deg, #f06598 33%, #fff500 66%, #00e29e 100% );
+  filter: blur(4px);
+  opacity: 1;
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+.tokium_lockscreen::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #c8e3f3;
+  border-radius: inherit;
+}
+      
+.tokium_loading_spinner {
+  width: 2em;
+  height: 2em;
+  border: 10px solid #f3f3f3; 
+  border-top: 10px solid #ff5998;
+  border-radius: 50%;
+  animation: tokium_spinner 1.5s linear infinite;
+}
+
+@keyframes tokium_spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*  UNLOCK MODAL */
+.tokium_unlockModal {
+  font-size: 100%;
+  font-family: 'Noto', sans-serif;
+  padding: 1em;
+}
+
+.tokium_image {
+  min-width: 30%;
+  max-width: 50%;
+  height: auto;
+}
