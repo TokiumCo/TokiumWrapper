@@ -65,7 +65,7 @@ Usage
 
   // The component of your gated route goes here
   
-</TokiumProvider>
+</GatedRoute>
 ```
 
 #### Lockscreen
