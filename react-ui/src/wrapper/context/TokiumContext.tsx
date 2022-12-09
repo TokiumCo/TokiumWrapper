@@ -42,7 +42,6 @@ const TokiumProvider = (props: tokiumProviderProps) => {
     changeUserState({ verified })
     
     if (!verified) {
-      console.log('not verified')
       changeAppState({ message: 'Fetching your NFTs...' });
       await fetchUserNFTs();
     } else changeAppState({ loading: false });

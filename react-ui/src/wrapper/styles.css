@@ -82,7 +82,7 @@
 
 .tokium_button {
   border-radius: 12px;
-  background-color: #7e33b3;
+  background:linear-gradient(135deg, #CB5EEE 0%, #4BE1EC 100%);color:#ffffff;box-shadow:0 10px 20px -10px var(--shadow-color-candy);
   color: white;
   font-weight: 700;
   padding: 4px 16px;
