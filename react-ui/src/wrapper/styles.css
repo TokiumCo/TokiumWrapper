@@ -6,6 +6,7 @@
   z-index: 1;
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -41,15 +42,15 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: #c8e3f3;
+  background: #fff;
   border-radius: inherit;
 }
       
 .tokium_loading_spinner {
-  width: 2em;
-  height: 2em;
-  border: 10px solid #f3f3f3; 
-  border-top: 10px solid #ff5998;
+  width: 1em;
+  height: 1em;
+  border: 5px solid #9a9a9a; 
+  border-top: 5px solid #ff5998;
   border-radius: 50%;
   animation: tokium_spinner 1.5s linear infinite;
 }
@@ -67,11 +68,29 @@
 .tokium_unlockModal {
   font-size: 100%;
   font-family: 'Noto', sans-serif;
-  padding: 1em;
 }
 
 .tokium_image {
   min-width: 30%;
   max-width: 50%;
   height: auto;
+}
+
+.tokium_unlockModal_text {
+  margin: 8px;
+}
+
+.tokium_button {
+  border-radius: 12px;
+  background-color: #7e33b3;
+  color: white;
+  font-weight: 700;
+  padding: 4px 16px;
+  box-shadow: 0px 0px 10px 2px ;
+  border-width: 0px;
+  margin-bottom: 4px;
+}
+
+.hover:hover {
+  cursor: pointer;
 }
