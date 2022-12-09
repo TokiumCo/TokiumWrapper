@@ -9,10 +9,10 @@ interface gatedRouteProps {
 
 // Token/Royalty gates the parent route component
 export const GatedRoute = (props: gatedRouteProps) => { 
-    const tokium = useContext(TokiumContext);
-    if (tokium.verified === false) {
+    const {userState} = useContext(TokiumContext);
+    if (userState.verified === false) {
         return <Navigate to={props.redirect} replace />
-    } else if (tokium.verified === true) {
+    } else if (userState.verified === true) {
         return props.children ? props.children : <Outlet />;
     }
 }
