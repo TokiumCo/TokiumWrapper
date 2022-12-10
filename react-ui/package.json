@@ -1,13 +1,13 @@
 {
   "name": "@tokium.co/tokiumwrapper",
-  "version": "0.2.9",
+  "version": "0.3.5",
   "description": "Production-enabed package to limit access to those who've payed royalties for their NFT",
   "private": false,
   "files": [
     "dist"
   ],
   "dependencies": {
-    "@tokium.co/tokiumsdk": "^1.2.2",
+    "@tokium.co/tokiumsdk": "^1.2.5",
     "axios": "^1.1.3",
     "react-router-dom": "^6.4.3"
   },

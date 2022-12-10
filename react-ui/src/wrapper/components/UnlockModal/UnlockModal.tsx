@@ -21,7 +21,7 @@ export const UnlockModal = () => {
   return (
     <div className="tokium_unlockModal">
       <img src={gatedByTokium} alt='Gated by Tokium' width={2433} height={334} className='tokium_image'/>
-      <div className="tokium_font tokium_unlockModal_text">{appState.message}</div>
+      <div className="tokium_font tokium_unlockModal_text" style={{color:"black"}}>{appState.message}</div>
       {
         appState.state==="buyNFT"? MagicEdenButton() : TokiumPayRoyalties()
       }

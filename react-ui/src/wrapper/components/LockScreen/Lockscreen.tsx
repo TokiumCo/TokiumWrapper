@@ -15,7 +15,7 @@ export const Lockscreen = (props: lockProps) => {
     return (
         <div className="tokium_lockscreen" style={props.style}>
           <div className='tokium_loading_spinner'></div>
-          <div>{appState.message}</div>
+          <div style={{color: 'black'}}>{appState.message}</div>
         </div>
     )
   }

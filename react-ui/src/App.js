@@ -1,36 +1,67 @@
-import { Lockscreen } from './wrapper';
-// import {Lockscreen} from "@tokium.co/tokiumwrapper"
+
 import './index.css';
-import gatedByTokium from './wrapper/assets/gatedByTokium.png';
-import { Link } from 'react-router-dom';
 import './wrapper/styles.css';
+import DemoPage from './DemoPage';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { GatedRoute, TokiumProvider } from './wrapper';
+import GatedSite from './GatedSite';
+import { useState } from 'react';
+
+
+
 
 function App() {
+  const [magicEdenURL, setMagicEdenURL] = useState("https://magiceden.io/marketplace/claynosaurz")
+  const [pubkey, setPubkey] = useState("jMrEQWGaF5Z6Hu6iUfBovP6KBZUMi5A66oLqJ9KnQKb");
+  
+  
+  const updateStatus = (status) => {
+    switch (status) {
+      case 'noNFTs':
+        setMagicEdenURL('https://magiceden.io/marketplace/claynosaurz');
+        setPubkey('jMrEQWGaF5Z6Hu6iUfBovP6KBZUMi5A66oLqJ9KnQKb')
+        break;
+      case 'unpaid':
+        
+        setMagicEdenURL('https://magiceden.io/marketplace/shiba_corp');
+        setPubkey('jMrEQWGaF5Z6Hu6iUfBovP6KBZUMi5A66oLqJ9KnQKb');
+        break;
+      case 'paid':
+        setMagicEdenURL('https://magiceden.io/marketplace/drippies');
+        setPubkey('jMrEQWGaF5Z6Hu6iUfBovP6KBZUMi5A66oLqJ9KnQKb')
+        break;
+      default:
+        setMagicEdenURL('https://magiceden.io/marketplace/shiba_corp');
+        setPubkey('jMrEQWGaF5Z6Hu6iUfBovP6KBZUMi5A66oLqJ9KnQKb');
+    }
+  }
+  
   return (
-    <div className="App">
-      <img src={gatedByTokium} alt='Gated by Tokium' className='tokiumLogo'/>
-      <div className='container'>
-        <div className='locked-form'>
-          {/* Custom Lockscreen styles */}
-          <Lockscreen style={{width: '200px'}}>
-            <div>
-              <form>
-                <input type='email' placeholder='email'></input>
-                <input type='password' placeholder='password'></input>
-              </form>
-            </div>
-          </Lockscreen>
-        </div>
-        <div className='locked-sm'>
-            <Lockscreen>
-              <div>
-                <p>Some Secret Text</p>
-              </div>
-            </Lockscreen>
-        </div>
-        <Link to='/GatedSite'>Go to Gated Site</Link>
+    <div>
+      <div>
+        <button onClick={()=> updateStatus('unpaid')}>Unpaid</button>
+        <button onClick={()=> updateStatus('paid')}>paid</button>
+        <button onClick={()=> updateStatus('noNFTs')}>nonfts</button>
+
       </div>
+      <TokiumProvider pubkey={pubkey} collection={magicEdenURL}>
+        <Router>
+              
+              <Routes>
+              <Route path='/' element={<DemoPage />} />
+              <Route path='/GatedSite' element={
+                  <GatedRoute redirect='/'>
+                      {<GatedSite />}
+                  </GatedRoute>
+              }
+              />
+              </Routes>
+        </Router>
+      </TokiumProvider>
+      
+      
     </div>
+    
   );
 }
 

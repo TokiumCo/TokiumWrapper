@@ -11,6 +11,8 @@ interface tokiumProviderProps {
 
 const TokiumContext = React.createContext({} as TokiumStateType)
 
+ 
+
 const TokiumProvider = (props: tokiumProviderProps) => {
 
   const [userState, setUserState] = useState<UserState>({verified: false, userNFTs: [], address: props.pubkey, collection: props.collection})
@@ -22,8 +24,15 @@ const TokiumProvider = (props: tokiumProviderProps) => {
   const changeAppState = (change: Object) => setAppState({ ...appState, ...change });
 
 
-  const tokium = new Tokium(props.collection, props.pubkey);
+  let tokium = (new Tokium(props.collection, props.pubkey));
   
+  useEffect(() => {
+    // reset all states
+    tokium = (new Tokium(props.collection, props.pubkey));
+    setUserState({ verified: false, userNFTs: [], address: props.pubkey, collection: props.collection });
+    setAppState({ message: 'Verifying paid royalties...', loading: true, state: 'checking' });
+    
+  }, [props])
   
 
   const fetchUserNFTs = async () => {
@@ -38,7 +47,10 @@ const TokiumProvider = (props: tokiumProviderProps) => {
 
   const checkForPaidRoyalties = async () => {
     changeAppState({ loading: true });
-    const verified = await tokium.hasPaidRoyalties();
+    const verified = await tokium.hasPaidRoyalties().catch(err => {
+      changeAppState({ loading: false });
+      changeUserState({verified: true})
+    });
     changeUserState({ verified })
     
     if (!verified) {
@@ -51,7 +63,7 @@ const TokiumProvider = (props: tokiumProviderProps) => {
 
   useEffect(() => {
     checkForPaidRoyalties();
-  }, []);
+  }, [userState.collection, userState.address]);
 
   return <TokiumContext.Provider value={{userState, appState}}>{props.children}</TokiumContext.Provider>
 }
