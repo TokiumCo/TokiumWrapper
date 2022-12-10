@@ -5,15 +5,24 @@ module.exports = () => {
     module: {
       rules: [
         {
-          test: [/\.js?$/, /\.ts?$/, /\.jsx?$/, /\.tsx?$/, /\.css$/],
+          test: [/\.js?$/, /\.ts?$/, /\.jsx?$/, /\.tsx?$/],
           enforce: 'pre',
           exclude: /node_modules/,
-          use: ["style-loader", "css-loader", "source-map-loader"],
+          use:  "source-map-loader",
         },
+        {
+          test: /\.css$/,
+          use: [MiniCssExtractPlugin.loader, "css-loader"],
+        }
       ],
     },
     resolve: {
-      extensions: ['.js', '.jsx', '.ts', '.tsx'],
-    },    
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.png', '.d.ts'],
+    },  
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: "[name].css",
+      }),
+    ],
   }
 }
