@@ -23,7 +23,7 @@ function App() {
         break;
       case 'unpaid':
         
-        setMagicEdenURL('https://magiceden.io/marketplace/shiba_corp');
+        setMagicEdenURL('https://magiceden.io/marketplace/gmers');
         setPubkey('jMrEQWGaF5Z6Hu6iUfBovP6KBZUMi5A66oLqJ9KnQKb');
         break;
       case 'paid':

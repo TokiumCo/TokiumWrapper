@@ -13,7 +13,7 @@ export const UnlockModal = () => {
   );
 
   const TokiumPayRoyalties = () => (
-    <button className='tokium_button hover' onClick={() => window.open("https://tokium.co", "_blank" )}>
+    <button className='tokium_button hover' onClick={() => window.open("https://app.tokium.co", "_blank" )}>
       Pay Royalties
     </button>
   );
