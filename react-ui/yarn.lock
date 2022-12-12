@@ -1818,10 +1818,10 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
-"@tokium.co/tokiumsdk@^1.2.5":
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/@tokium.co/tokiumsdk/-/tokiumsdk-1.2.5.tgz#994708b1c691a5a62fc7b74b4ff32ee655d59a58"
-  integrity sha512-hNPRZ9ErgyJUpJ7jftCsev+/SuVtuetV64sHXtfdxlb+ETG7zL5BkV0Ltz0dlwbKWSpq1iSH/zOyx4d3lGu0vA==
+"@tokium.co/tokiumsdk@^1.2.6":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@tokium.co/tokiumsdk/-/tokiumsdk-1.2.6.tgz#09ee2dea1813146736a8480d4d79500e9f6eb339"
+  integrity sha512-BIHY90jNZKRfRfWQsvzVL2pGvZLFCkSzaGZSSjZWcvJGLedjRvLv5h8U4B+sYjLQ5yWIXVNKioAyjYTqGCvFWQ==
   dependencies:
     "@solana/spl-token" "^0.3.6"
     "@solana/web3.js" "^1.69.0"
