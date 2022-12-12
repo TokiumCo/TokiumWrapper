@@ -1,6 +1,6 @@
 {
   "name": "@tokium.co/tokiumwrapper",
-  "version": "0.3.6",
+  "version": "0.3.8",
   "description": "Production-enabed package to limit access to those who've payed royalties for their NFT",
   "private": false,
   "files": [

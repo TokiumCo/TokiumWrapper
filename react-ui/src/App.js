@@ -27,7 +27,7 @@ function App() {
         setPubkey('jMrEQWGaF5Z6Hu6iUfBovP6KBZUMi5A66oLqJ9KnQKb');
         break;
       case 'paid':
-        setMagicEdenURL('https://magiceden.io/marketplace/drippies');
+        setMagicEdenURL('https://magiceden.io/marketplace/great__goats');
         setPubkey('jMrEQWGaF5Z6Hu6iUfBovP6KBZUMi5A66oLqJ9KnQKb')
         break;
       default:
