@@ -7,13 +7,13 @@
 #### NPM
 
 ```
-npm i @tokium.co/tokiumwrapper
+npm i "@tokium.co/tokiumwrapper"
 ```
 
 #### Yarn
 
 ```
-yarn add @tokium.co/tokiumwrapper
+yarn add "@tokium.co/tokiumwrapper"
 ```
 
 #### TokiumContext
